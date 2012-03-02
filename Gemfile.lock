@@ -124,6 +124,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   rails (= 3.2.1)
+  rake
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer
