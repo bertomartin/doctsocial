@@ -25,7 +25,10 @@ namespace :deploy do
   end
 end
 
-after 'deploy:update_code', 'deploy:symlink_shared'
+#after 'deploy:update_code', 'deploy:symlink_shared'
+after 'deploy:update_code' do 
+  run "cd #{release_path}; RAILS_ENV=production rake assets:precompile"
+end
 
 
 
