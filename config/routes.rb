@@ -1,10 +1,12 @@
 Docsocial::Application.routes.draw do
+  resources :products
+
   root :to => "static_pages#home"
-  get "static_pages/home"
+  #get "static_pages/home", :as => 'home'
 
-  get "static_pages/about"
+  get "static_pages/about", :as => 'about'
 
-  get "static_pages/privacy"
+  get "static_pages/privacy", :as => 'privacy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

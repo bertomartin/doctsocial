@@ -2,13 +2,66 @@
 <html>
 <head>
   <title>Docsocial | <%= yield(:title) %></title>
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
-<%= yield %>
+	
+	<div class="navbar">
+	  <div class="navbar-inner">
+	    <div class="container">
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </a>
+				<%= link_to "DoctSocial", root_url, :class => 'brand' %>
+				<!-- Everything you want hidden at 940px or less, place within here -->
+	      <div class="nav-collapse">
+	        <!-- .nav, .navbar-search, .navbar-form, etc -->
+					<ul class="nav">
+					  <li class="active">
+					    <%= link_to "Browse Products", products_path %>
+					  </li>
+					  <li><%= link_to "About", about_path %></li>
+					  <li><%= link_to "Contact Us" %></li>
+						<li><%= link_to "Privacy", privacy_path %></li>
+					</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+<div class="container">
+	
+	
+	<div class="row">
+		<div class="span9">
+			<% flash.each do |name, msg| %>
+				<div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+					<a class="close" data-dismiss="alert">x</a>
+					<%= msg %>
+				</div>
+			<% end %>
+			
+			<%= yield %>
+		</div>
+		<div class="span3">
+			<h2>About Us</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius odio eu turpis imperdiet ac porttitor enim dictum. Maecenas non velit sed eros commodo auctor. Nullam interdum, ante vel adipiscing feugiat, nisi diam sagittis arcu, eget egestas neque libero nec mi. In porta feugiat dui, sit a
+				</p>
+		</div>
+	</div>
+	
+	
+</div>
 
 </body>
 </html>
