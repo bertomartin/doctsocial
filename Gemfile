@@ -42,3 +42,5 @@ gem 'rake'
 
  # gem 'therubyracer'
 #end
+
+gem 'mysql2'
