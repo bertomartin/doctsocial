@@ -50,6 +50,7 @@ gem 'annotate'
 
 group :production do
   gem 'mysql2'
+  gem "rack-cache", "~> 1.2"
 end
 
 
